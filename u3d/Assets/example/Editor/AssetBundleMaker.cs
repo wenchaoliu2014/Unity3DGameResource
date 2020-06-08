@@ -12,13 +12,13 @@ public class AssetBundleMaker
 	public static void Make()
 	{
 		Object asset = AssetDatabase.LoadAssetAtPath("Assets/example/prefab/item.prefab",typeof(Object));
-		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+".unity3d",BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies,BuildTarget.iPhone);
+		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+".unity3d",BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies,BuildTarget.iOS);
 
 		asset = AssetDatabase.LoadAssetAtPath("Assets/example/prefab/Terrain.prefab",typeof(Object));
-		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+".unity3d",BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies,BuildTarget.iPhone);
+		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+".unity3d",BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies,BuildTarget.iOS);
 
 		asset = AssetDatabase.LoadAssetAtPath("Assets/example/prefab/Button.prefab",typeof(Object));
-		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+".unity3d",BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies,BuildTarget.iPhone);
+		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+".unity3d",BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies,BuildTarget.iOS);
 		AssetDatabase.Refresh();
 	}
 
@@ -28,17 +28,17 @@ public class AssetBundleMaker
 		Object asset = AssetDatabase.LoadAssetAtPath("Assets/example/prefab/item.prefab",typeof(Object));
 		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+"_uncompress.unity3d",
 			BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies|BuildAssetBundleOptions.UncompressedAssetBundle,
-			BuildTarget.iPhone);
+			BuildTarget.iOS);
 
 		asset = AssetDatabase.LoadAssetAtPath("Assets/example/prefab/Terrain.prefab",typeof(Object));
 		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+"_uncompress.unity3d",
 			BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies|BuildAssetBundleOptions.UncompressedAssetBundle,
-			BuildTarget.iPhone);
+			BuildTarget.iOS);
 
 		asset = AssetDatabase.LoadAssetAtPath("Assets/example/prefab/Button.prefab",typeof(Object));
 		BuildPipeline.BuildAssetBundle(asset,null,Application.dataPath+"/example/bundle/"+asset.name+"_uncompress.unity3d",
 			BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies|BuildAssetBundleOptions.UncompressedAssetBundle,
-			BuildTarget.iPhone);
+			BuildTarget.iOS);
 		AssetDatabase.Refresh();
 	}
 
@@ -51,7 +51,7 @@ public class AssetBundleMaker
 		Object[] arrayObj = new Object[]{asset1,asset2,asset3};
 		BuildPipeline.BuildAssetBundle(null,arrayObj,Application.dataPath+"/example/bundle/combine_uncompress.unity3d",
 			BuildAssetBundleOptions.CompleteAssets|BuildAssetBundleOptions.CollectDependencies|BuildAssetBundleOptions.UncompressedAssetBundle,
-			BuildTarget.iPhone);
+			BuildTarget.iOS);
 		AssetDatabase.Refresh();
 	}
 }

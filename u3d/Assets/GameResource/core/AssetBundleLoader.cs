@@ -44,13 +44,13 @@ namespace GameResource
         //create form file immediate
         public static AssetBundle CreateFromFile(string path , int offset = 0)
         {
-            return AssetBundle.CreateFromFile(path , offset);
+            return AssetBundle.LoadFromFile(path , (uint)offset);
         }
 
         //create from memory immediate
         public static AssetBundle CreateFromMemoryImmediate(byte[] binary)
         {
-            return AssetBundle.CreateFromMemoryImmediate(binary);
+            return AssetBundle.LoadFromMemory(binary);
         }
 
         //load async by binary
@@ -124,7 +124,7 @@ namespace GameResource
         //start binary load
         private IEnumerator StartBinary()
         {
-            this.m_cABRequest = AssetBundle.CreateFromMemory(this.m_cData);
+            this.m_cABRequest = AssetBundle.LoadFromMemoryAsync(this.m_cData);
             for(;!this.m_cABRequest.isDone;)
             {
                 this.m_fProgess = this.m_cABRequest.progress;

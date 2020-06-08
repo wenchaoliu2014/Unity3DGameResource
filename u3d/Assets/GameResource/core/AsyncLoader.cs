@@ -47,7 +47,7 @@ namespace GameResource
         {
             this.m_delFinishCallback = finish_callback;
             this.m_fProgress = 0;
-            this.m_cRequest = asset.LoadAsync(resName, typeof(UnityEngine.Object));
+            this.m_cRequest = asset.LoadAssetAsync(resName, typeof(UnityEngine.Object));
 
             for (; !this.m_cRequest.isDone; )
             {
