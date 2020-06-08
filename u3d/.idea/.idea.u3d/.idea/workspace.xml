@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="884b2ff7-68be-405d-a3c4-7e790b5bf8d1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameResource/core/AssetBundleLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameResource/core/AssetBundleLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GameResource/core/AsyncLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameResource/core/AsyncLoader.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/example/Editor/AssetBundleMaker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/example/Editor/AssetBundleMaker.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/example/example1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/example/example1.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.u3d/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/example/scripts/example_test1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/example/scripts/example_test1.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/Assembly-CSharp.csprojAssemblyReference.cache" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -24,8 +22,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/GameResource/core/AssetBundleLoader.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="96">
-              <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+            <state relative-caret-position="39">
+              <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
               <folding>
                 <marker date="1591348587105" expanded="false" signature="6:58" ph="..." />
                 <marker date="1591348587105" expanded="true" signature="61:110" ph="/* AssetBundleLoader.cs ... */" />
@@ -57,21 +55,53 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/example/scripts/example_test1.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+            <state relative-caret-position="280">
+              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
               <folding>
-                <marker date="1591583877361" expanded="true" signature="6:98" ph="..." />
-                <marker date="1591583877361" expanded="true" signature="143:1506" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="234:846" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="953:1126" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="1010:1091" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="1186:1262" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="1320:1343" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="1361:1504" ph="{...}" />
-                <marker date="1591583877361" expanded="true" signature="1397:1498" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="6:98" ph="..." />
+                <marker date="1591594105375" expanded="true" signature="143:1541" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="234:739" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="846:1161" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="903:1124" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="1221:1297" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="1355:1378" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="1396:1539" ph="{...}" />
+                <marker date="1591594105375" expanded="true" signature="1432:1533" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1375">
+              <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+              <folding>
+                <marker date="1591594105379" expanded="false" signature="6:78" ph="..." />
+                <marker date="1591594105379" expanded="true" signature="80:128" ph="/* AbRequest.cs ... */" />
+                <marker date="1591594105379" expanded="true" signature="153:4370" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="224:4368" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="1097:1453" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="1123:1443" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="1233:1375" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="1596:2039" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2099:2286" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2159:2276" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2335:2577" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2461:2531" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2660:2798" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2888:3039" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="2947:3029" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="3134:3543" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="3279:3533" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="3583:4362" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="3651:4352" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="3727:4338" ph="{...}" />
+                <marker date="1591594105379" expanded="true" signature="3856:4130" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -91,6 +121,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/example/Editor/AssetBundleMaker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/E08391A6-1749-4326-AB23-C696AA501E53/71/85e3d29b/AssetBundle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/example/scripts/example_test1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12D5C418-62C0-4C38-AA4B-BAE97D375F36/8d/4f3518d3/AssetBundle.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameResource/core/FileLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameResource/core/AsyncLoader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/GameResource/core/AssetBundleLoader.cs" root0="FORCE_HIGHLIGHTING" />
@@ -102,6 +134,7 @@
         <option value="$PROJECT_DIR$/Assets/GameResource/core/AsyncLoader.cs" />
         <option value="$PROJECT_DIR$/Packages/manifest.json" />
         <option value="$PROJECT_DIR$/Assets/example/scripts/example_test1.cs" />
+        <option value="$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs" />
       </list>
     </option>
   </component>
@@ -174,6 +207,13 @@
               <item name="u3d" type="34e6ba20:FileSystemExplorerNode" />
               <item name="Assets" type="34e6ba20:FileSystemExplorerNode" />
               <item name="GameResource" type="34e6ba20:FileSystemExplorerNode" />
+            </path>
+            <path>
+              <item name="" type="161ac34:FileSystemExplorerRootNode" />
+              <item name="u3d" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="Assets" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="GameResource" type="34e6ba20:FileSystemExplorerNode" />
+              <item name="abAPI" type="34e6ba20:FileSystemExplorerNode" />
             </path>
             <path>
               <item name="" type="161ac34:FileSystemExplorerRootNode" />
@@ -315,10 +355,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="95339">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="95768">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="95339" />
+      <option name="pid" value="95768" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -337,12 +377,12 @@
       <workItem from="1591348137678" duration="209000" />
       <workItem from="1591348379292" duration="3707000" />
       <workItem from="1591581730580" duration="9000" />
-      <workItem from="1591581756038" duration="1769000" />
+      <workItem from="1591581756038" duration="5487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5869000" />
+    <option name="totallyTimeSpent" value="9587000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -357,7 +397,7 @@
     <frame x="0" y="23" width="1920" height="997" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28221512" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23375931" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -365,7 +405,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946752" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -377,8 +417,8 @@
       <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="bottom" id="Unit Tests" order="13" />
       <window_info anchor="bottom" id="Terminal" order="14" />
-      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5005325" side_tool="true" visible="true" weight="0.4" />
-      <window_info anchor="bottom" id="Unity" order="16" />
+      <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5005325" side_tool="true" weight="0.32928178" />
+      <window_info anchor="bottom" id="Unity" order="16" sideWeight="0.49946752" weight="0.3005525" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -399,6 +439,58 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/example/scripts/example_test1.cs</url>
+          <line>32</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/example/scripts/example_test1.cs" initialLine="44">
+            <startOffsets>
+              <option value="861" />
+            </startOffsets>
+            <endOffsets>
+              <option value="903" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs</url>
+          <line>46</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs" initialLine="46">
+            <startOffsets>
+              <option value="1619" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1663" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/example/scripts/example_test1.cs</url>
+          <line>25</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/example/scripts/example_test1.cs" initialLine="25">
+            <startOffsets>
+              <option value="715" />
+            </startOffsets>
+            <endOffsets>
+              <option value="733" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs</url>
+          <line>113</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs" initialLine="113">
+            <startOffsets>
+              <option value="3606" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3651" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
@@ -537,10 +629,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/example/bundle_ios/button.manifest.meta">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/example/bundle_ios/bundle_ios.manifest">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/example/bundle_ios/button.manifest">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-206" />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/GameResource/core/AssetBundleLoader.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="14" column="5" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        <state relative-caret-position="39">
+          <caret line="70" column="40" selection-start-line="70" selection-start-column="40" selection-end-line="70" selection-end-column="40" />
           <folding>
             <marker date="1591348587105" expanded="false" signature="6:58" ph="..." />
             <marker date="1591348587105" expanded="true" signature="61:110" ph="/* AssetBundleLoader.cs ... */" />
@@ -571,20 +674,57 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/12D5C418-62C0-4C38-AA4B-BAE97D375F36/8d/4f3518d3/AssetBundle.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="345" column="13" selection-start-line="345" selection-start-column="13" selection-end-line="345" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/example/scripts/example_test1.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        <state relative-caret-position="280">
+          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
           <folding>
-            <marker date="1591583877361" expanded="true" signature="6:98" ph="..." />
-            <marker date="1591583877361" expanded="true" signature="143:1506" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="234:846" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="953:1126" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="1010:1091" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="1186:1262" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="1320:1343" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="1361:1504" ph="{...}" />
-            <marker date="1591583877361" expanded="true" signature="1397:1498" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="6:98" ph="..." />
+            <marker date="1591594105375" expanded="true" signature="143:1541" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="234:739" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="846:1161" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="903:1124" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="1221:1297" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="1355:1378" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="1396:1539" ph="{...}" />
+            <marker date="1591594105375" expanded="true" signature="1432:1533" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/GameResource/abAPI/AbRequest.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1375">
+          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
+          <folding>
+            <marker date="1591594105379" expanded="false" signature="6:78" ph="..." />
+            <marker date="1591594105379" expanded="true" signature="80:128" ph="/* AbRequest.cs ... */" />
+            <marker date="1591594105379" expanded="true" signature="153:4370" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="224:4368" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="1097:1453" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="1123:1443" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="1233:1375" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="1596:2039" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2099:2286" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2159:2276" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2335:2577" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2461:2531" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2660:2798" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2888:3039" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="2947:3029" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="3134:3543" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="3279:3533" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="3583:4362" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="3651:4352" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="3727:4338" ph="{...}" />
+            <marker date="1591594105379" expanded="true" signature="3856:4130" ph="{...}" />
           </folding>
         </state>
       </provider>

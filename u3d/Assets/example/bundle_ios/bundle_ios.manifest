@@ -1,0 +1,13 @@
+ManifestFileVersion: 0
+CRC: 2781405535
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: button
+      Dependencies: {}
+    Info_1:
+      Name: item
+      Dependencies: {}
+    Info_2:
+      Name: terrain
+      Dependencies: {}

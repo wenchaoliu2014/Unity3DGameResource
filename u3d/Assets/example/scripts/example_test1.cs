@@ -12,19 +12,16 @@ public class example_test1 : MonoBehaviour
     void Start()
     {
         this.req = AbRequest.Create(finish_callback, error_callback);
-#if UNITY_IOS
-        string path = Application.dataPath + "/example/bundle/item.unity3d";
-#else
-		string path = "file:///"+Application.dataPath + "/example/bundle/item.unity3d";
-#endif
+
+        string path = "file:///" + Application.dataPath + "/example/bundle_ios/item";
         this.paths.Add(path);
         req.Request(path);
 
-        path = "file:///" + Application.dataPath + "/example/bundle/Terrain.unity3d";
+        path = "file:///" + Application.dataPath + "/example/bundle_ios/terrain";
         this.paths.Add(path);
         req.Request(path);
 
-        path = "file:///" + Application.dataPath + "/example/bundle/Button.unity3d";
+        path = "file:///" + Application.dataPath + "/example/bundle_ios/button";
         this.paths.Add(path);
         req.Request(path);
     }
@@ -35,10 +32,12 @@ public class example_test1 : MonoBehaviour
     {
         for (int i = 0; i < this.paths.Count; i++)
         {
-            GameObject.Instantiate(res[paths[i]].mainAsset);
+//            GameObject.Instantiate(res[paths[i]]);
+            GameObject _Prefab = res[paths[i]].LoadAsset<GameObject>(paths[i]);
+            GameObject obj = Instantiate(_Prefab, transform, true);
         }
 
-        this.req.Disport();
+//        this.req.Disport();
     }
 
     private void error_callback(string path, string error)
