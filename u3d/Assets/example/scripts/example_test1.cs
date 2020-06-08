@@ -1,12 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using GameResource;
-<<<<<<< HEAD
 using GameResource.abAPI;
-=======
-using UnityEngine;
->>>>>>> edca4b1c16d06d3c910a45a51f59e263a1521822
 
 namespace example.scripts
 {
