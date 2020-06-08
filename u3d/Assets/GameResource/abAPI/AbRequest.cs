@@ -76,6 +76,7 @@ namespace GameResource
             }
 
             this.m_mapRes.Clear();
+            GameObject.DestroyImmediate(this.gameObject);
         }
 
         //get asset bundle
@@ -104,7 +105,6 @@ namespace GameResource
             {
                 if (this.m_delFinishCallback == null) Debug.LogError("The finish callback is null.");
                 else this.m_delFinishCallback(this.m_mapRes);
-                GameObject.DestroyImmediate(this.gameObject);
             }
         }
 

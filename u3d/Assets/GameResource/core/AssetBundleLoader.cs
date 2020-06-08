@@ -13,38 +13,39 @@ namespace GameResource
     //assetbundle loader
     public class AssetBundleLoader : MonoBehaviour
     {
-        private static GameObject sGoInstance = null;  //gameobject
+        private static GameObject sGoInstance = null; //gameobject
 
         public delegate void FINISH_CALLBACK(string path, AssetBundle ob);
+
         public delegate void ERROR_CALLBACK(string path, string error);
 
-        private string m_strPath;   //加载路径
-        private bool m_bComplete;   //是否加载完成
+        private string m_strPath; //加载路径
+        private bool m_bComplete; //是否加载完成
+
         public bool Complete
         {
             get { return this.m_bComplete; }
         }
 
-        private AssetBundle m_cAssetbundle;  //assetbundle data
-        private WWW m_cWww;     //WWW
-        private AssetBundleCreateRequest m_cABRequest;  //assetbundle create request
+        private AssetBundle m_cAssetbundle; //assetbundle data
+        private WWW m_cWww; //WWW
+        private AssetBundleCreateRequest m_cABRequest; //assetbundle create request
         private byte[] m_cData; //assetbundle data
-        private float m_fProgess;   //the progess of the www.
+        private float m_fProgess; //the progess of the www.
+
         public float Progress
         {
-            get
-            {
-                return this.m_fProgess;
-            }
+            get { return this.m_fProgess; }
         }
-        private FINISH_CALLBACK m_cFinishCallBack;   //finish callback
-        private ERROR_CALLBACK m_cErrorCallBack;    //error callback.
+
+        private FINISH_CALLBACK m_cFinishCallBack; //finish callback
+        private ERROR_CALLBACK m_cErrorCallBack; //error callback.
 
 
         //create form file immediate
-        public static AssetBundle CreateFromFile(string path , int offset = 0)
+        public static AssetBundle CreateFromFile(string path, int offset = 0)
         {
-            return AssetBundle.LoadFromFile(path , (uint)offset);
+            return AssetBundle.LoadFromFile(path, (uint) offset);
         }
 
         //create from memory immediate
@@ -54,64 +55,65 @@ namespace GameResource
         }
 
         //load async by binary
-        public static AssetBundleLoader LoadBinary(byte[] binary,FINISH_CALLBACK finish_callback = null ,ERROR_CALLBACK error_callback = null)
+        public static AssetBundleLoader LoadBinary(byte[] binary, FINISH_CALLBACK finish_callback = null,
+            ERROR_CALLBACK error_callback = null)
         {
-            if(sGoInstance == null)
+            if (sGoInstance == null)
             {
                 sGoInstance = new GameObject("AssetBundleLoader");
             }
-            
+
             AssetBundleLoader loader = sGoInstance.AddComponent<AssetBundleLoader>();
-            loader.Init(binary , finish_callback , error_callback);
+            loader.Init(binary, finish_callback, error_callback);
             loader.StartCoroutine(loader.StartBinary());
             return loader;
         }
 
         //load async by www
         public static AssetBundleLoader LoadWww(
-            string path ,
+            string path,
             FINISH_CALLBACK finish_callback = null,
             ERROR_CALLBACK error_callback = null
-            )
+        )
         {
-            if(sGoInstance == null)
+            if (sGoInstance == null)
             {
                 sGoInstance = new GameObject("AssetBundleLoader");
             }
-            
+
             AssetBundleLoader loader = sGoInstance.AddComponent<AssetBundleLoader>();
-            loader.Init(path , finish_callback , error_callback);
+            loader.Init(path, finish_callback, error_callback);
             loader.StartCoroutine(loader.StartWWW());
             return loader;
         }
 
         //init binary
         private void Init(
-            byte[] binary ,
-            FINISH_CALLBACK finish_callback = null ,
+            byte[] binary,
+            FINISH_CALLBACK finish_callback = null,
             ERROR_CALLBACK error_callback = null
-            )
+        )
         {
             this.m_cData = binary;
-            Init(finish_callback,error_callback);
+            Init(finish_callback, error_callback);
         }
 
         //init path
         private void Init(
-            string path ,
+            string path,
             FINISH_CALLBACK finish_callback = null,
             ERROR_CALLBACK error_callback = null
-            )
+        )
         {
             this.m_strPath = path;
-            Init(finish_callback,error_callback);
+            Init(finish_callback, error_callback);
         }
 
         //init
         private void Init(
             FINISH_CALLBACK finish_callback = null,
             ERROR_CALLBACK error_callback = null
-            )
+        )
         {
             this.m_bComplete = false;
             this.m_cWww = null;
@@ -125,27 +127,30 @@ namespace GameResource
         private IEnumerator StartBinary()
         {
             this.m_cABRequest = AssetBundle.LoadFromMemoryAsync(this.m_cData);
-            for(;!this.m_cABRequest.isDone;)
+            for (; !this.m_cABRequest.isDone;)
             {
                 this.m_fProgess = this.m_cABRequest.progress;
                 yield return new WaitForEndOfFrame();
             }
-            if(this.m_cFinishCallBack != null)
+
+            if (this.m_cFinishCallBack != null)
             {
-                this.m_cFinishCallBack("",this.m_cABRequest.assetBundle);
+                this.m_cFinishCallBack("", this.m_cABRequest.assetBundle);
             }
+
             GameObject.Destroy(this.gameObject);
         }
 
         //start www load
         private IEnumerator StartWWW()
         {
+//            yield return new WaitForSeconds(10);
             string path = "";
             path += this.m_strPath;
             this.m_cAssetbundle = null;
             this.m_cWww = new WWW(path);
 
-            for( ;!this.m_cWww.isDone; )
+            for (; !this.m_cWww.isDone;)
             {
                 this.m_fProgess = this.m_cWww.progress;
                 yield return new WaitForEndOfFrame();
@@ -154,9 +159,9 @@ namespace GameResource
             if (this.m_cWww.error != null)
             {
                 Debug.LogError(m_cWww.error);
-                if(this.m_cErrorCallBack != null )
+                if (this.m_cErrorCallBack != null)
                 {
-                    this.m_cErrorCallBack(this.m_strPath , this.m_cWww.error);
+                    this.m_cErrorCallBack(this.m_strPath, this.m_cWww.error);
                 }
             }
             else
@@ -164,18 +169,16 @@ namespace GameResource
                 this.m_bComplete = true;
                 this.m_fProgess = 1;
                 this.m_cAssetbundle = this.m_cWww.assetBundle;
-                if(this.m_cFinishCallBack != null)
+                if (this.m_cFinishCallBack != null)
                 {
-                    this.m_cFinishCallBack(this.m_strPath , this.m_cWww.assetBundle);
+                    this.m_cFinishCallBack(this.m_strPath, this.m_cWww.assetBundle);
                 }
             }
 
             this.m_cWww.Dispose();
             this.m_cWww = null;
-            GameObject.Destroy(this.gameObject);
+//            Debug.LogError(m_strPath + ";;" + Time.realtimeSinceStartup + ";;name = " + this.gameObject.name);
+            GameObject.Destroy(this);
         }
-
     }
-
-
 }

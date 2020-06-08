@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using GameResource;
 
 
@@ -30,11 +32,15 @@ public class example_test1 : MonoBehaviour
 
     private void finish_callback(Dictionary<string, AssetBundle> res)
     {
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < this.paths.Count; i++)
         {
-//            GameObject.Instantiate(res[paths[i]]);
-            GameObject _Prefab = res[paths[i]].LoadAsset<GameObject>(paths[i]);
-            GameObject obj = Instantiate(_Prefab, transform, true);
+//            GameObject.Instantiate(res[paths[i]].mainAsset);
+            sb.Clear();
+            var index = paths[i].LastIndexOf("/", StringComparison.Ordinal);
+            sb.Append(paths[i].Substring(index + 1));
+            GameObject prefab = res[paths[i]].LoadAsset<GameObject>(sb.ToString());
+            Instantiate(prefab);
         }
 
 //        this.req.Disport();
@@ -56,6 +62,11 @@ public class example_test1 : MonoBehaviour
         if (this.req != null)
         {
             GUI.Label(new Rect(0, 0, 100, 40), "Progress " + this.req.Progress);
+        }
+
+        if (GUI.Button(new Rect(30, 50, 50, 50), "clear"))
+        {
+            this.req.Disport();
         }
     }
 }
