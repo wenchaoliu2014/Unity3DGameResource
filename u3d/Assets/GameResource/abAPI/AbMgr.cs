@@ -2,6 +2,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using GameResource.abAPI;
 
 //	AbMgr.cs
 //	Author: Lu Zexi

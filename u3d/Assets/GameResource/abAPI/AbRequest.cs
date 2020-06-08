@@ -1,132 +1,112 @@
-using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 
-//	AbRequest.cs
-//	Author: Lu Zexi
-//	2014-10-18
-
-
-namespace GameResource
+namespace GameResource.abAPI
 {
-    //Assetbundle request
+    //AbRequest
     public class AbRequest : MonoBehaviour
     {
-        public delegate void FINISH_CALLBACK(Dictionary<string, AssetBundle> res); //finish callback
+        public delegate void ErrorCallbackDelegate(string path, string error); //error callback
 
-        public delegate void ERROR_CALLBACK(string path, string error); //error callback
+        public delegate void FinishCallbackDelegate(Dictionary<string, AssetBundle> res); //finish callback
 
-        private FINISH_CALLBACK m_delFinishCallback = null; //finish callback
-        private ERROR_CALLBACK m_delErrorCallback = null; //error callbcak
+        private const int MaxLoaderNum = 20; //max loader num
+        private ErrorCallbackDelegate _mDelErrorCallback; //error callback
 
-        private const int MAX_LOADER_NUM = 20; //max loader num
-        private int m_iLoadIndex = 0; //index of the load list
-        private int m_iCompleteNum = 0; //loading complete num
-        private List<string> m_lstPath = new List<string>(); //the path of the path
-        private List<AssetBundleLoader> m_lstLoader = new List<AssetBundleLoader>(); //list loader
-        private Dictionary<string, AssetBundle> m_mapRes = new Dictionary<string, AssetBundle>(); //the resource map
+        private FinishCallbackDelegate _mDelFinishCallback; //finish callback
+        private int _mICompleteNum; //loading complete num
+        private int _mILoadIndex; //index of the load list
+        private readonly List<AssetBundleLoader> _mLstLoader = new List<AssetBundleLoader>(); //list loader
+        private readonly List<string> _mLstPath = new List<string>(); //the path of the path
+
+        private readonly Dictionary<string, AssetBundle>
+            _mMapRes = new Dictionary<string, AssetBundle>(); //the resource map
 
         public float Progress
         {
             get
             {
                 float sum = 0;
-                for (int i = 0; i < this.m_lstLoader.Count; i++)
+                foreach (var abl in _mLstLoader)
                 {
-                    AssetBundleLoader abl = this.m_lstLoader[i];
                     sum += abl.Progress;
                 }
 
-                return sum / this.m_lstLoader.Count;
+                return sum / _mLstLoader.Count;
             }
         }
 
         //create request
-        public static AbRequest Create(FINISH_CALLBACK finish_callback = null, ERROR_CALLBACK error_callback = null)
+        public static AbRequest Create(FinishCallbackDelegate finishCallback = null,
+            ErrorCallbackDelegate errorCallback = null)
         {
-            GameObject go = new GameObject("AbRequest");
-            AbRequest req = go.AddComponent<AbRequest>();
-            req.m_delFinishCallback = finish_callback;
-            req.m_delErrorCallback = error_callback;
-            req.m_iLoadIndex = 0;
-            req.m_iCompleteNum = 0;
-            req.m_lstPath.Clear();
-            req.m_lstLoader.Clear();
-            req.m_mapRes.Clear();
+            var go = new GameObject("AbRequest");
+            var req = go.AddComponent<AbRequest>();
+            req._mDelFinishCallback = finishCallback;
+            req._mDelErrorCallback = errorCallback;
+            req._mILoadIndex = 0;
+            req._mICompleteNum = 0;
+            req._mLstPath.Clear();
+            req._mLstLoader.Clear();
+            req._mMapRes.Clear();
             return req;
         }
 
         //request
         public void Request(string path)
         {
-            if (!this.m_mapRes.ContainsKey(path))
-            {
-                this.m_lstPath.Add(path);
-                this.m_mapRes.Add(path, null);
-            }
+            if (_mMapRes.ContainsKey(path)) return;
+            _mLstPath.Add(path);
+            _mMapRes.Add(path, null);
         }
 
         //disport
         public void Disport()
         {
-            this.m_lstLoader.Clear();
-            foreach (KeyValuePair<string, AssetBundle> item in this.m_mapRes)
-            {
-                item.Value.Unload(false);
-            }
+            _mLstLoader.Clear();
+            foreach (var item in _mMapRes) item.Value.Unload(false);
 
-            this.m_mapRes.Clear();
-            GameObject.DestroyImmediate(this.gameObject);
+            _mMapRes.Clear();
+            DestroyImmediate(gameObject);
         }
 
         //get asset bundle
-        public AssetBundle GetAssetBundle(string name)
+        public AssetBundle GetAssetBundle(string keyName)
         {
-            if (this.m_mapRes.ContainsKey(name))
-                return this.m_mapRes[name];
-            return null;
+            return _mMapRes.ContainsKey(keyName) ? _mMapRes[keyName] : null;
         }
 
         //error callback
-        protected void ErrorCallback(string path, string error)
+        private void ErrorCallback(string path, string error)
         {
-            if (this.m_delErrorCallback != null)
-            {
-                this.m_delErrorCallback(path, error);
-            }
+            _mDelErrorCallback?.Invoke(path, error);
         }
 
         //finish callback
-        protected void FinishCallback(string path, AssetBundle obj)
+        private void FinishCallback(string path, AssetBundle obj)
         {
-            this.m_mapRes[path] = obj;
-            this.m_iCompleteNum++;
-            if (this.m_iCompleteNum == this.m_lstPath.Count)
-            {
-                if (this.m_delFinishCallback == null) Debug.LogError("The finish callback is null.");
-                else this.m_delFinishCallback(this.m_mapRes);
-            }
+            _mMapRes[path] = obj;
+            _mICompleteNum++;
+            if (_mICompleteNum != _mLstPath.Count) return;
+            if (_mDelFinishCallback == null) Debug.LogError("The finish callback is null.");
+            else _mDelFinishCallback(_mMapRes);
         }
 
         //update
-        void Update()
+        private void Update()
         {
-            if (this.m_iCompleteNum == this.m_iLoadIndex)
+            if (_mICompleteNum != _mILoadIndex) return;
+            if (_mILoadIndex >= _mLstPath.Count) return;
+            for (var i = 0; i < MaxLoaderNum && _mILoadIndex + i < _mLstPath.Count; i++)
             {
-                if (this.m_iLoadIndex < this.m_lstPath.Count)
-                {
-                    for (int i = 0; i < MAX_LOADER_NUM && (this.m_iLoadIndex + i) < this.m_lstPath.Count; i++)
-                    {
-                        AssetBundleLoader loader = AssetBundleLoader.LoadWww(this.m_lstPath[this.m_iLoadIndex + i],
-                            FinishCallback, ErrorCallback);
-                        this.m_lstLoader.Add(loader);
-                    }
-
-                    this.m_iLoadIndex += MAX_LOADER_NUM;
-                    if (this.m_iLoadIndex > this.m_lstPath.Count)
-                        this.m_iLoadIndex = this.m_lstPath.Count;
-                }
+                var loader = AssetBundleLoader.LoadWww(_mLstPath[_mILoadIndex + i],
+                    FinishCallback, ErrorCallback);
+                _mLstLoader.Add(loader);
             }
+
+            _mILoadIndex += MaxLoaderNum;
+            if (_mILoadIndex > _mLstPath.Count)
+                _mILoadIndex = _mLstPath.Count;
         }
     }
 }
